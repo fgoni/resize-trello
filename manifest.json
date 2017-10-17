@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Resize Trello",
+  "description": "This extension allows the user to change Trello board width.",
+  "version": "1.0",
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Set Trello's boards width to fit more per row"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "jquery.min.js",
+        "work.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

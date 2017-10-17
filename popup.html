@@ -1,0 +1,51 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="jquery.min.js"></script>
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <h1>Resize Trello</h1>
+    <div id="container">
+      <span>Choose the number of boards per row</span>
+      <select id="dropdown">
+        <option selected disabled hidden value=''></option>
+        <option value="12">12</option>
+        <option value="10">10</option>
+        <option value="8">8</option>
+        <option value="6">6</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </body>
+</html>
